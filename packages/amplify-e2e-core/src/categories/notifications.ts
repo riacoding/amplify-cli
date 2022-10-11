@@ -48,8 +48,9 @@ export const addNotificationChannel = async (
   cwd: string,
   { resourceName }: NotificationSettings,
   channel: string,
+  testingWithLatestCodebase = true,
 ): Promise<void> => {
-  const chain = spawn(getCLIPath(), ['add', 'notification'], { cwd, stripColors: true });
+  const chain = spawn(getCLIPath(testingWithLatestCodebase), ['add', 'notification'], { cwd, stripColors: true });
 
   chain
     .wait('Choose the notification channel to enable')

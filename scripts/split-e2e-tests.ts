@@ -501,7 +501,15 @@ function main(): void {
     CONCURRENCY,
     true,
   );
-  saveConfig(splitV6MigrationTests);
+  const splitV10MigrationTests = splitTests(
+    splitV6MigrationTests,
+    'amplify_migration_tests_v10',
+    'build_test_deploy',
+    join(repoRoot, 'packages', 'amplify-migration-tests'),
+    CONCURRENCY,
+    true,
+  );
+  saveConfig(splitV10MigrationTests);
   verifyConfig();
 }
 main();
