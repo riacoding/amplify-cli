@@ -340,7 +340,7 @@ function splitTests(
                 requires: [...(requires ? [requires] : workflowJob[jobName].requires || [])],
                 matrix: {
                   parameters: {
-                    os: WINDOWS_TEST_ALLOWLIST.includes(newJobName) ? ['l', 'w'] : ['l'],
+                    os: ['l', 'w'],
                   },
                 },
               },
