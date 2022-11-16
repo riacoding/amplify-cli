@@ -8,6 +8,7 @@ import { getNotificationsAppConfig } from './notifications-backend-cfg-api';
 import { updateChannelAPIResponse } from './notifications-api';
 
 const writeTeamProviderInfo = (pinpointMeta: $TSAny): void => {
+  return;
   if (!pinpointMeta) {
     return;
   }

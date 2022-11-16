@@ -219,6 +219,7 @@ export const analyticsPluginAPIPostPush = async (context: $TSContext) : Promise<
  * @param pinpointMeta ( for Id, Region and env specific resource name)
  */
 const writeNotificationsTeamProviderInfo = async (pinpointMeta: $TSAny): Promise<void> => {
+  return;
   if (!pinpointMeta) {
     return;
   }
