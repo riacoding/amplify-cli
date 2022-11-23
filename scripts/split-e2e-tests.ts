@@ -99,6 +99,7 @@ const JOBS_RUNNING_ON_LINUX_LARGE_VM: string[] = [
   'schema-auth-14_pkg',
   'schema-auth-15_pkg',
   'schema-searchable_pkg',
+  'notifications-sms-pull_pkg',
 ];
 
 // Ensure to update packages/amplify-e2e-tests/src/cleanup-e2e-resources.ts is also updated this gets updated
