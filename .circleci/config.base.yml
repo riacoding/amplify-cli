@@ -134,12 +134,11 @@ jobs:
             - run:
                 name: Build tests
                 command: yarn build-tests
-            - persist_to_workspace:
-                root: ~/.
+            - save_cache:
+                key: amplify-cli-repo-windows-{{ .Branch }}-{{ .Revision }}
                 paths:
-                  - repo
-                  - .cache
-                  - .ssh
+                  - ~/repo
+                  - ~/.ssh
   test:
     <<: *linux-e2e-executor-large
     steps:
@@ -421,8 +420,8 @@ jobs:
           condition:
             equal: [*windows-e2e-executor-medium, << parameters.os >>]
           steps:
-            - attach_workspace:
-                at: ~/.
+            - restore_cache:
+                key: amplify-cli-repo-windows-{{ .Branch }}-{{ .Revision }}
       - when:
           condition:
             or:
