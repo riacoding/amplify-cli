@@ -105,7 +105,7 @@ export async function createNewProjectDir(
   let projectDir;
   do {
     const randomId = await global.getRandomId();
-    projectDir = path.join(prefix, `${projectName}_${randomId}_${currentHash}`)
+    projectDir = path.join(prefix, `${randomId}_${projectName}_${currentHash}`)
   } while (fs.existsSync(projectDir));
 
   fs.ensureDirSync(projectDir);
